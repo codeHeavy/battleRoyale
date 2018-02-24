@@ -10,5 +10,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	self.position = get_child(1).SelectedGridPosition
+	self.global_position = get_child(1).SelectedGridPosition
 	pass
