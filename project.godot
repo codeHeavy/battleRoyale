@@ -11,7 +11,15 @@ config_version=3
 [application]
 
 config/name="Jam5"
+run/main_scene="res://World.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/borderless=true
+window/size/test_width=1920
+window/size/test_height=1080
 
 [rendering]
 
