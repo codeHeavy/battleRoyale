@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 var Health = 3
@@ -10,5 +10,5 @@ func _ready():
 	pass
 
 func _process(delta):
-	position = get_child(1).position
+	self.position = get_child(1).SelectedGridPosition
 	pass
