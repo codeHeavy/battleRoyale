@@ -1,15 +1,19 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Grid.gd" type="Script" id=1]
 [ext_resource path="res://ViewGrid.gd" type="Script" id=2]
 [ext_resource path="res://Minion.gd" type="Script" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://green-square-hi.png" type="Texture" id=5]
-[ext_resource path="res://Selector.gd" type="Script" id=6]
+[ext_resource path="res://SmartBlonde.png" type="Texture" id=4]
+[ext_resource path="res://Selector01.png" type="Texture" id=5]
+[ext_resource path="res://Player1Selector.gd" type="Script" id=6]
 
 [sub_resource type="TileSet" id=1]
 
 _sections_unfolded = [ "Resource" ]
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
 
 [node name="World" type="Node" index="0"]
 
@@ -33,28 +37,39 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="ViewGrid" type="Node2D" parent="Grid" index="0"]
 
 script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Player" type="Node2D" parent="." index="1"]
+
+_sections_unfolded = [ "Transform" ]
 
 [node name="Minion" type="Node2D" parent="Player" index="0"]
 
 script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Character" type="Sprite" parent="Player/Minion" index="0"]
 
-position = Vector2( 32, 32 )
+position = Vector2( 320, 192 )
+scale = Vector2( 0.533333, 0.484848 )
 texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -128 )
+_sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Selector" type="Sprite" parent="Player/Minion" index="1"]
 
-position = Vector2( 96, 32 )
-scale = Vector2( 0.106667, 0.106667 )
+material = SubResource( 2 )
+position = Vector2( 320, 128 )
+scale = Vector2( 0.256, 0.249027 )
 texture = ExtResource( 5 )
+centered = false
 script = ExtResource( 6 )
+_sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 

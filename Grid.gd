@@ -2,7 +2,7 @@ extends TileMap
 var tileSize = get_cell_size()
 var halfTileSize = tileSize / 2
 
-var gridSize = Vector2(64,64)
+var gridSize = Vector2(24,24)
 var grid = []
 
 enum OBJECTS {Player1, Player2, Pickups}
@@ -15,7 +15,7 @@ func _ready():
 			grid[x].append(null)
 	pass
 
-func iaVacant(pos,direction):
+func isVacant(pos,direction):
 	var gridPos = world_to_map(pos) + direction
 	
 	if gridPos.x < gridSize.x and gridPos.x >= 0:
@@ -28,8 +28,8 @@ func iaVacant(pos,direction):
 
 # returns new position to move the selector
 # and updates the grid values to reflect the same
-func updateCildPos(childNode):
-	var gridPos = world_to_map(childNode.get_global_position())
+func updateChildPos(childNode):
+	var gridPos = world_to_map(childNode.position)
 	#print(gridPos)
 	# set previos cell to empty
 	grid[gridPos.x][gridPos.y] = null
@@ -39,5 +39,8 @@ func updateCildPos(childNode):
 	grid[newPos.x][newPos.y] = Player1
 	
 	# position for actual movement
-	var newTargetPosition = map_to_world(newPos) + halfTileSize
+	var newTargetPosition = map_to_world(newPos)
 	return newTargetPosition
+
+func getGridPos(childNode):
+	return world_to_map(childNode.position)
