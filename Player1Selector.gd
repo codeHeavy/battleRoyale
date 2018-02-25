@@ -55,19 +55,19 @@ func WaitForAction(delta):
 				selectedAction = 1; # Move
 				inputTaken = false
 				print(SelectedGridPosition)
-		
-	if(selectedAction == 1):
-		SelectedGridPosition = self.position
-		releaseCounter = timeLimit
-		#self.show();
-		#if(selectedAction == 2):
-			#if(self.getov):
-				#var attackee = ;
+				releaseCounter = timeLimit
 		# debug prints
 		# print("chara : ",get_parent().get_child(0).position)
 		# print("sele : ",self.position)
 	pass
 
+func TakeAction():
+	if(selectedAction == 1):
+		SelectedGridPosition = self.position
+		#self.show();
+		#if(selectedAction == 2):
+			#if(self.getov):
+				#var attackee = ;
 # Limits the motion of the selector depending on the speed
 func isMovable(dir):
 	var currentCharacterGridPos = grid.getGridPos(get_parent().get_child(0))
