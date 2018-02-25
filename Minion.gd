@@ -12,5 +12,5 @@ func _ready():
 func _process(delta):
 	
 	# changing the position of minion to the position of the selector
-	self.global_position = get_child(1).SelectedGridPosition
+#	self.global_position = get_child(1).SelectedGridPosition
 	pass
