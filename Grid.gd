@@ -2,7 +2,7 @@ extends TileMap
 var tileSize = get_cell_size()
 var halfTileSize = tileSize / 2
 
-var gridSize = Vector2(24,24)
+var gridSize = Vector2(30,30)
 var grid = []
 
 enum OBJECTS {Player1, Player2, Pickups}

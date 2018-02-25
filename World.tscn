@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Grid.gd" type="Script" id=1]
 [ext_resource path="res://ViewGrid.gd" type="Script" id=2]
-[ext_resource path="res://Minion.gd" type="Script" id=3]
-[ext_resource path="res://SmartBlonde.png" type="Texture" id=4]
-[ext_resource path="res://Selector01.png" type="Texture" id=5]
-[ext_resource path="res://Player1Selector.gd" type="Script" id=6]
+[ext_resource path="res://Background.png" type="Texture" id=3]
+[ext_resource path="res://Minion.gd" type="Script" id=4]
+[ext_resource path="res://Tilles.png" type="Texture" id=5]
+[ext_resource path="res://Selector01.png" type="Texture" id=6]
+[ext_resource path="res://Player1Selector.gd" type="Script" id=7]
 
 [sub_resource type="TileSet" id=1]
 
@@ -41,23 +42,60 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="ViewGrid" type="Node2D" parent="Grid" index="0"]
 
+visible = false
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="Background" type="Control" parent="Grid" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Grid/Background" index="0"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="Background" type="Sprite" parent="Grid/Background/ParallaxBackground" index="0"]
+
+position = Vector2( 960, 544 )
+scale = Vector2( 0.24, 0.242749 )
+texture = ExtResource( 3 )
+
 [node name="Player" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Minion" type="Node2D" parent="Player" index="0"]
 
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Character" type="Sprite" parent="Player/Minion" index="0"]
 
 position = Vector2( 320, 192 )
-scale = Vector2( 0.533333, 0.484848 )
-texture = ExtResource( 4 )
+scale = Vector2( 0.533333, 0.484849 )
+texture = ExtResource( 5 )
 centered = false
 offset = Vector2( 0, -128 )
 _sections_unfolded = [ "Offset", "Transform" ]
@@ -67,9 +105,9 @@ _sections_unfolded = [ "Offset", "Transform" ]
 material = SubResource( 2 )
 position = Vector2( 320, 128 )
 scale = Vector2( 0.256, 0.249027 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 centered = false
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 
