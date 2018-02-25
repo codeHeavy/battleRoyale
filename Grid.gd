@@ -30,7 +30,7 @@ func iaVacant(pos,direction):
 # and updates the grid values to reflect the same
 func updateCildPos(childNode):
 	var gridPos = world_to_map(childNode.get_global_position())
-	print(gridPos)
+	#print(gridPos)
 	# set previos cell to empty
 	grid[gridPos.x][gridPos.y] = null
 	
