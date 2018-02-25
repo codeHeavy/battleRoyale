@@ -1,3 +1,4 @@
+# Unit Script acting as the primary "class" for player's units.
 extends KinematicBody2
 
 enum PowerUp {none, A, B, C} # can be taken from script of weapons whoever makes them
@@ -9,6 +10,7 @@ enum PowerUp {none, A, B, C} # can be taken from script of weapons whoever makes
 # Unit attributes
 var HP = 3
 var speed = 1
+var attackRange = 1
 var isDefending = false
 
 # Visible in inspector for debug
@@ -37,7 +39,17 @@ func move():
 	pass
 
 func attack(target):
+	# perform attack on target
 	pass
-	
+
+# call when the unit is attacked by another player's unit	
 func take_damage():
+	# when attacked, take damage accordingly
+	# acccount for defending
 	pass
+
+# call when the unit comes in contact with a powerup	
+func apply_powerup(powerup):
+	speed = powerup.speed
+	attackRange = powerup.attackRange
+	
