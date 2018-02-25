@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Minion.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Selector.gd" type="Script" id=3]
+[ext_resource path="res://green-square-hi.png" type="Texture" id=3]
+[ext_resource path="res://Selector.gd" type="Script" id=4]
 
 [sub_resource type="TileSet" id=1]
 
@@ -45,8 +46,9 @@ texture = ExtResource( 2 )
 [node name="Selector" type="Sprite" parent="Player1/Minion" index="1"]
 
 position = Vector2( 96, 32 )
-texture = ExtResource( 2 )
-script = ExtResource( 3 )
+scale = Vector2( 0.106667, 0.106667 )
+texture = ExtResource( 3 )
+script = ExtResource( 4 )
 _sections_unfolded = [ "Pause" ]
 
 

@@ -4,19 +4,24 @@ extends Node2D
 
 var Health = 3
 var MovementSpeed = 1
-var minionTransform = get_global_transform()
+var minionTransform 
 var prevGridPosition 
 
 func _ready():
+	minionTransform = get_global_transform()
 	prevGridPosition = get_child(1).SelectedGridPosition
 	pass
 
 func _process(delta):
 	
-	# changing the position of minion to the position of the selector
 	
+	# changing the position of minion to the position of the selector with linear interpolate
 	if(get_child(1).SelectedGridPosition != prevGridPosition):
-		minionTransform.origin = minionTransform.origin.linear_interpolate(get_child(1).SelectedGridPosition, delta)
+		minionTransform.origin = minionTransform.origin.linear_interpolate(get_child(1).SelectedGridPosition, 2*delta)
 		set_global_transform(minionTransform)
-		#self.global_position = get_child(1).SelectedGridPosition
-		pass
+		#get_child(1).hide()
+	#else:
+		#get_child(1).show()
+	
+		
+	pass
