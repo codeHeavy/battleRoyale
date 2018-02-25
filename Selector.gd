@@ -4,9 +4,7 @@ extends Sprite
 
 var MovementCircle=[]
 var MovementSpeed = 2
-onready var map = get_node("/root/World/TileMap")
-
-var SelectedGridPosition =  map.map_to_world(Vector2(1,1))
+var SelectedGridPosition = Vector2(32,32)
 
 var releaseCounter = 0.5
 
