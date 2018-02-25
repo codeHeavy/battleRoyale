@@ -4,9 +4,11 @@ extends Node2D
 
 var Health = 3
 var MovementSpeed = 1
+var attackRange = 1
 var minionTransform
 var characterObject 
 var prevGridPosition 
+
 
 func _ready():
 	minionTransform = get_global_transform()
@@ -39,3 +41,21 @@ func move(delta):
 	else:
 		get_child(1).show()
 	pass
+	
+func attack(target):
+	# call take_damage from Minion in selected target for attack
+	# get overlapping 
+	pass
+
+# call when the unit is attacked by another player's unit	
+func take_damage():
+	# when attacked, take damage accordingly
+	
+	# acccount for defending-  EXTRA
+	pass
+
+# call when the unit comes in contact with a powerup, applies the movementSpeed  and attackRange of the powerup to this Minion 	
+func apply_powerup(powerup):
+	MovementSpeed = powerup.MovementSpeed
+	attackRange = powerup.attackRange
+	
