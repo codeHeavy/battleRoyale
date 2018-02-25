@@ -34,24 +34,24 @@ func WaitForAction(delta):
 	if(selectedAction == 0):
 		if(releaseCounter < 0):
 			var isMoving = false
-			if(Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_D) ):
+			if(Input.is_key_pressed(KEY_I) or Input.is_key_pressed(KEY_K) or Input.is_key_pressed(KEY_J) or Input.is_key_pressed(KEY_L) ):
 				isMoving = true
 				inputTaken = true
 			direction = Vector2()
 			if isMoving:
-				if (Input.is_key_pressed(KEY_W)):
+				if (Input.is_key_pressed(KEY_I)):
 					direction = TOP
-				elif (Input.is_key_pressed(KEY_S)):
+				elif (Input.is_key_pressed(KEY_K)):
 					direction = DOWN
-				elif (Input.is_key_pressed(KEY_A)):
+				elif (Input.is_key_pressed(KEY_J)):
 					direction = LEFT
-				elif (Input.is_key_pressed(KEY_D)):
+				elif (Input.is_key_pressed(KEY_L)):
 					direction = RIGHT
 			var targetPos = grid.updateChildPos(self)
 			if(isMovable(direction)):
 				self.position = targetPos
 				releaseCounter = timeLimit
-			if(Input.is_key_pressed(KEY_Z) && inputTaken):
+			if(Input.is_key_pressed(KEY_PERIOD) && inputTaken):
 				selectedAction = 1; # Move
 				inputTaken = false
 				print(SelectedGridPosition)
