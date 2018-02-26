@@ -3,17 +3,8 @@ extends Node
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-<<<<<<< HEAD
-var p1minion0 = Vector2(0,0)
-var p1minion1 = Vector2(0,0)
-var p1minion2 = Vector2(0,0)
-var p2minion0 = Vector2(0,0)
-var p2minion1 = Vector2(0,0)
-var p2minion2 = Vector2(0,0)
 
-=======
 var turnCounter = 0
->>>>>>> 891762ca243cac4c09d7747d6dd67af5945d8334
 func _ready():
 	# Called every time the node is added to the scene.
 	# Initialization here
@@ -41,37 +32,33 @@ func _process(delta):
 		get_child(2).get_child(1).get_child(1).set_modulate(Color(1, .5, 0, 0))
 		get_child(2).get_child(2).get_child(1).set_modulate(Color(1, .5, 0, 0))
 		get_child(2).EndTurn()
-<<<<<<< HEAD
 		#print(get_child(0).getGridPos(get_child(1).get_child(0)))
 		#print(get_child(0).getGridPos(get_child(1).get_child(1)))
 		#print(get_child(0).getGridPos(get_child(1).get_child(2)))
 		#print(get_child(0).getGridPos(get_child(2).get_child(0)))
 		#print(get_child(0).getGridPos(get_child(2).get_child(1)))
 		#print(get_child(0).getGridPos(get_child(2).get_child(2)))
+		turnCounter = turnCounter + 1
+		if(turnCounter == 1):
+			get_child(0).get_child(0).shrink()
+			turnCounter = 0
 	pass
 	
 func isColliding(playerToCheckAgainst, position): # 1 for player 1 2 for player 2, returns index of the minion or 3 for no collision
 	print("collllll")
 	print(position)
-	print(p1minion2)
-	print(p2minion2)
+	print(get_child(1).get_child(0).position)
+	print(get_child(2).get_child(0).position)
 	if (playerToCheckAgainst == 1):
 		#if (position.x <= get_child(1).get_child(0).position.x+32 && position.x+32 >= get_child(1).get_child(0).position.x
 		#&& position.y <= get_child(1).get_child(0).position.y+32 && position.y+32 >= get_child(1).get_child(0).position.y): return 0
-		if (position == p1minion0): return 0
-		elif (position == p1minion1): return 1
-		elif (position == p1minion2): return 2
+		if (position == get_child(1).get_child(0).position): return 0
+		elif (position == get_child(1).get_child(1).position): return 1
+		elif (position == get_child(1).get_child(2).position): return 2
 		else: return 3
 	else:
-		if (position == p2minion0): return 0
-		elif (position == p2minion1): return 1
-		elif (position == p2minion2): return 2
+		if (position == get_child(2).get_child(0).position): return 0
+		elif (position == get_child(2).get_child(1).position): return 1
+		elif (position == get_child(2).get_child(2).position): return 2
 		else: return 3
 	pass
-=======
-		turnCounter = turnCounter + 1
-	if(turnCounter == 1):
-		get_child(0).get_child(0).shrink()
-		turnCounter = 0
-	pass
->>>>>>> 891762ca243cac4c09d7747d6dd67af5945d8334

@@ -45,8 +45,8 @@ func _process(delta):
 	# minion 1
 	var m1_pos = get_parent().get_parent().get_child(1).get_child(0).position
 	var m1 = get_parent().get_parent().get_child(1).get_child(0)
-	print(m1_pos.x, " ", m1_pos.y)
-	print(currentBoundryXStart," ",currentBoundryXEnd," ",currentBoundryYStart," ",currentBoundryYEnd,"")
+	#print(m1_pos.x, " ", m1_pos.y)
+	#print(currentBoundryXStart," ",currentBoundryXEnd," ",currentBoundryYStart," ",currentBoundryYEnd,"")
 	if(m1_pos.x <= currentBoundryXStart or m1_pos.x >= currentBoundryXEnd or m1_pos.y <= currentBoundryYStart or m1_pos.y >= currentBoundryYEnd):
 		m1.take_damage()
 	pass

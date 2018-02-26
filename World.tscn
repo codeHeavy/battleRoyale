@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Grid.gd" type="Script" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://Tilles.png" type="Texture" id=7]
 [ext_resource path="res://Selector01.png" type="Texture" id=8]
 [ext_resource path="res://Player1Selector.gd" type="Script" id=9]
-[ext_resource path="res://Player2.gd" type="Script" id=10]
-[ext_resource path="res://Player2Selector.gd" type="Script" id=11]
+[ext_resource path="res://Player2Selector.gd" type="Script" id=10]
 
 [sub_resource type="TileSet" id=1]
 
@@ -167,12 +166,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Player2" type="Node2D" parent="." index="2"]
 
-<<<<<<< HEAD
-script = ExtResource( 10 )
-=======
-editor/display_folded = true
 script = ExtResource( 5 )
->>>>>>> 891762ca243cac4c09d7747d6dd67af5945d8334
 _sections_unfolded = [ "Transform" ]
 
 [node name="Minion" type="Node2D" parent="Player2" index="0"]
@@ -196,7 +190,7 @@ material = SubResource( 2 )
 scale = Vector2( 0.256, 0.249027 )
 texture = ExtResource( 8 )
 centered = false
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Minion2" type="Node2D" parent="Player2" index="1"]
@@ -220,7 +214,7 @@ material = SubResource( 2 )
 scale = Vector2( 0.256, 0.249027 )
 texture = ExtResource( 8 )
 centered = false
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Minion3" type="Node2D" parent="Player2" index="2"]
@@ -244,7 +238,7 @@ material = SubResource( 2 )
 scale = Vector2( 0.256, 0.249027 )
 texture = ExtResource( 8 )
 centered = false
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 

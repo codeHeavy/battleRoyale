@@ -37,8 +37,12 @@ func move():
 	var offset = Vector2(0.5,0.5)
 	if(get_child(1).SelectedGridPosition != prevGridPosition):
 		#characterObject.position = characterObject.position.linear_interpolate(get_child(1).SelectedGridPosition + offset, 1)
+		print("old: ")
+		print(self.position)
 		self.position = self.position + get_child(1).SelectedGridPosition
-		#get_child(1).position = Vector2(0, 0)
+		print("new: ")
+		print(self.position)
+		get_child(1).position = Vector2(0, 0)
 		# To hide the selector
 		# get_child(1).hide()
 	else:
@@ -53,7 +57,6 @@ func attack(target):
 # call when the unit is attacked by another player's unit	
 func take_damage():
 	# when attacked, take damage accordingly
-<<<<<<< HEAD
 	Health = Health - 1;
 	if (Health == 2): get_child(0).set_modulate(Color(.7, .3, .3, 1))
 	elif (Health == 1): get_child(0).set_modulate(Color(1, 0, 0, 1))
@@ -61,9 +64,7 @@ func take_damage():
 		notDead = 0
 		self.set_modulate(Color(0, 0, 0, 0))
 		
-=======
 	print("sad")
->>>>>>> 891762ca243cac4c09d7747d6dd67af5945d8334
 	# acccount for defending-  EXTRA
 	pass
 

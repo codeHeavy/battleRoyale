@@ -20,22 +20,16 @@ func TakeTurn(delta):
 		get_child(0).get_child(1).WaitForAction(delta)
 		if (get_child(0).get_child(1).selectedAction != 0):
 			print("cycle to 2")
-			if (get_child(0).get_child(1).selectedAction == 1):
-				get_parent().p2minion0 = get_parent().p2minion0 + get_child(0).get_child(1).SelectedGridPosition
 			timer = 5;
 	elif (timer < 10):
 		get_child(1).get_child(1).WaitForAction(delta)
 		if (get_child(1).get_child(1).selectedAction != 0):
 			print("cycle to 3")
-			if (get_child(1).get_child(1).selectedAction == 1):
-				get_parent().p2minion1 = get_parent().p2minion1 + get_child(1).get_child(1).SelectedGridPosition
 			timer = 10;
 	elif (timer < 15):
 		get_child(2).get_child(1).WaitForAction(delta)
 		if (get_child(2).get_child(1).selectedAction != 0):
 			print("cycle to 1")
-			if (get_child(2).get_child(1).selectedAction == 1):
-				get_parent().p2minion2 = get_parent().p2minion2 + get_child(2).get_child(1).SelectedGridPosition
 			timer = 15;
 	#else:
 		#print("no input")
