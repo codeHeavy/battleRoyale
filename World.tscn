@@ -161,6 +161,7 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Player2" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 script = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
