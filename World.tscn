@@ -54,6 +54,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Background" type="Control" parent="Grid" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -166,7 +167,12 @@ _sections_unfolded = [ "Offset", "Transform", "Visibility" ]
 
 [node name="Player2" type="Node2D" parent="." index="2"]
 
+<<<<<<< HEAD
 script = ExtResource( 10 )
+=======
+editor/display_folded = true
+script = ExtResource( 5 )
+>>>>>>> 891762ca243cac4c09d7747d6dd67af5945d8334
 _sections_unfolded = [ "Transform" ]
 
 [node name="Minion" type="Node2D" parent="Player2" index="0"]
