@@ -63,8 +63,7 @@ func take_damage():
 	else: 
 		notDead = 0
 		self.set_modulate(Color(0, 0, 0, 0))
-		
-	print("sad")
+	#print("sad")
 	# acccount for defending-  EXTRA
 	pass
 
