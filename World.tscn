@@ -47,7 +47,6 @@ _sections_unfolded = [ "Cell", "Transform" ]
 
 [node name="ViewGrid" type="Node2D" parent="Grid" index="0"]
 
-visible = false
 script = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 

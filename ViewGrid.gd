@@ -42,13 +42,40 @@ func _draw():
 func _process(delta):
 	# Called every frame. Delta is time since last frame.
 	# Update game logic here.
-	# minion 1
-	var m1_pos = get_parent().get_parent().get_child(1).get_child(0).position
-	var m1 = get_parent().get_parent().get_child(1).get_child(0)
+	# player1 minions
+	var p1_m1_pos = get_parent().get_parent().get_child(1).get_child(0).position
+	var p1_m1 = get_parent().get_parent().get_child(1).get_child(0)
+	
+	var p1_m2_pos = get_parent().get_parent().get_child(1).get_child(1).position
+	var p1_m2 = get_parent().get_parent().get_child(1).get_child(1)
+	
+	var p1_m3_pos = get_parent().get_parent().get_child(1).get_child(2).position
+	var p1_m3 = get_parent().get_parent().get_child(1).get_child(2)
 	#print(m1_pos.x, " ", m1_pos.y)
 	#print(currentBoundryXStart," ",currentBoundryXEnd," ",currentBoundryYStart," ",currentBoundryYEnd,"")
-	if(m1_pos.x <= currentBoundryXStart or m1_pos.x >= currentBoundryXEnd or m1_pos.y <= currentBoundryYStart or m1_pos.y >= currentBoundryYEnd):
-		m1.take_damage()
+	if(p1_m1_pos.x <= currentBoundryXStart or p1_m1_pos.x >= currentBoundryXEnd or p1_m1_pos.y <= currentBoundryYStart or p1_m1_pos.y >= currentBoundryYEnd):
+		p1_m1.take_damage()
+	if(p1_m2_pos.x <= currentBoundryXStart or p1_m2_pos.x >= currentBoundryXEnd or p1_m2_pos.y <= currentBoundryYStart or p1_m2_pos.y >= currentBoundryYEnd):
+		p1_m2.take_damage()
+	if(p1_m3_pos.x <= currentBoundryXStart or p1_m3_pos.x >= currentBoundryXEnd or p1_m3_pos.y <= currentBoundryYStart or p1_m3_pos.y >= currentBoundryYEnd):
+		p1_m3.take_damage()
+		
+	var p2_m1_pos = get_parent().get_parent().get_child(2).get_child(0).position
+	var p2_m1 = get_parent().get_parent().get_child(2).get_child(0)
+	
+	var p2_m2_pos = get_parent().get_parent().get_child(2).get_child(1).position
+	var p2_m2 = get_parent().get_parent().get_child(2).get_child(1)
+	
+	var p2_m3_pos = get_parent().get_parent().get_child(2).get_child(2).position
+	var p2_m3 = get_parent().get_parent().get_child(2).get_child(2)
+	#print(m1_pos.x, " ", m1_pos.y)
+	#print(currentBoundryXStart," ",currentBoundryXEnd," ",currentBoundryYStart," ",currentBoundryYEnd,"")
+	if(p2_m1_pos.x <= currentBoundryXStart or p2_m1_pos.x >= currentBoundryXEnd or p2_m1_pos.y <= currentBoundryYStart or p2_m1_pos.y >= currentBoundryYEnd):
+		p1_m1.take_damage()
+	if(p2_m2_pos.x <= currentBoundryXStart or p2_m2_pos.x >= currentBoundryXEnd or p2_m2_pos.y <= currentBoundryYStart or p2_m2_pos.y >= currentBoundryYEnd):
+		p2_m2.take_damage()
+	if(p2_m3_pos.x <= currentBoundryXStart or p2_m3_pos.x >= currentBoundryXEnd or p2_m3_pos.y <= currentBoundryYStart or p2_m3_pos.y >= currentBoundryYEnd):
+		p2_m3.take_damage()
 	pass
 
 func shrink():
