@@ -5,7 +5,7 @@
 [ext_resource path="res://Play01.png" type="Texture" id=3]
 [ext_resource path="res://Play.gd" type="Script" id=4]
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu" type="Node" index="0"]
 
 [node name="Screen" type="Sprite" parent="." index="0"]
 

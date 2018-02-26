@@ -24,19 +24,20 @@ func _ready():
 	# Initialization here
 	crowd = load("res://crowd.tscn")
 	pass
+
 func _draw():
-	var LINECOLOR = Color(255,0,0)
-	var LINEWIDTH = 2
-	var window_size = OS.get_window_size()
+	#var LINECOLOR = Color(255,0,0)
+	#var LINEWIDTH = 2
+	#var window_size = OS.get_window_size()
 	#generateCrowd()
-	for x in range(grid.gridSize.x + 1):
-		var colPos = x * grid.tileSize.x
-		var limit = grid.gridSize.y * grid.tileSize.y
-		draw_line(Vector2(colPos,0),Vector2(colPos,limit),LINECOLOR,LINEWIDTH)
-		for y in range(grid.gridSize.y + 1):
-			var rowPos = y * grid.tileSize.y
-			var limitR = grid.gridSize.x * grid.tileSize.y
-			draw_line(Vector2(0,rowPos),Vector2(limit,rowPos),LINECOLOR,LINEWIDTH)
+	#for x in range(grid.gridSize.x + 1):
+		#var colPos = x * grid.tileSize.x
+		#var limit = grid.gridSize.y * grid.tileSize.y
+		#draw_line(Vector2(colPos,0),Vector2(colPos,limit),LINECOLOR,LINEWIDTH)
+		#for y in range(grid.gridSize.y + 1):
+			#var rowPos = y * grid.tileSize.y
+			#var limitR = grid.gridSize.x * grid.tileSize.y
+			#draw_line(Vector2(0,rowPos),Vector2(limit,rowPos),LINECOLOR,LINEWIDTH)
 	pass
 
 func _process(delta):
