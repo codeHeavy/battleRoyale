@@ -30,6 +30,7 @@ func _ready():
 
 func WaitForAction(delta):
 	# timer to detect one press
+	self.set_modulate(Color(1, 1, 1, 1))
 	releaseCounter = releaseCounter - delta
 	if(selectedAction == 0):
 		if(releaseCounter < 0):
@@ -51,9 +52,16 @@ func WaitForAction(delta):
 			if(isMovable(direction)):
 				self.position = targetPos
 				releaseCounter = timeLimit
-			if(Input.is_key_pressed(KEY_Z) && inputTaken):
+			if(Input.is_key_pressed(KEY_2) && inputTaken):
 				selectedAction = 1; # Move
+				self.set_modulate(Color(1, 1, 1, .4))
 				inputTaken = false
+				print(SelectedGridPosition)
+				releaseCounter = timeLimit
+			if(Input.is_key_pressed(KEY_3) && inputTaken):
+				selectedAction = 2; # Attack
+				inputTaken = false
+				self.set_modulate(Color(1, 1, 1, .4))
 				print(SelectedGridPosition)
 				releaseCounter = timeLimit
 		# debug prints
@@ -64,6 +72,17 @@ func WaitForAction(delta):
 func TakeAction():
 	if(selectedAction == 1):
 		SelectedGridPosition = self.position
+		get_parent().move()
+	if(selectedAction == 2):
+		#var index = get_parent().get_parent().isColliding(2, self.position
+		print("col1")
+		var index = get_parent().get_parent().get_parent().isColliding(2, self.position+get_parent().position)
+		print(index)
+		if (index < 3):
+			get_parent().get_parent().get_parent().get_child(2).get_child(index).take_damage()
+		print("end col1")
+		
+	
 		#self.show();
 		#if(selectedAction == 2):
 			#if(self.getov):

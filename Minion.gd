@@ -8,6 +8,7 @@ var attackRange = 1
 var minionTransform
 var characterObject 
 var prevGridPosition 
+var notDead = 1
 
 
 func _ready():
@@ -19,7 +20,7 @@ func _ready():
 func _process(delta):
 	
 	# abstracted Move works with player1selector script
-	move(delta)
+	#move(delta)
 	
 	# comment out below if using move function
 	# changing the position of minion to the position of the selector with linear interpolate
@@ -32,10 +33,12 @@ func _process(delta):
 	pass
 
 
-func move(delta):
+func move():
 	var offset = Vector2(0.5,0.5)
 	if(get_child(1).SelectedGridPosition != prevGridPosition):
-		characterObject.position = characterObject.position.linear_interpolate(get_child(1).SelectedGridPosition + offset, delta * 2)
+		#characterObject.position = characterObject.position.linear_interpolate(get_child(1).SelectedGridPosition + offset, 1)
+		self.position = self.position + get_child(1).SelectedGridPosition
+		#get_child(1).position = Vector2(0, 0)
 		# To hide the selector
 		# get_child(1).hide()
 	else:
@@ -50,7 +53,13 @@ func attack(target):
 # call when the unit is attacked by another player's unit	
 func take_damage():
 	# when attacked, take damage accordingly
-	
+	Health = Health - 1;
+	if (Health == 2): get_child(0).set_modulate(Color(.7, .3, .3, 1))
+	elif (Health == 1): get_child(0).set_modulate(Color(1, 0, 0, 1))
+	else: 
+		notDead = 0
+		self.set_modulate(Color(0, 0, 0, 0))
+		
 	# acccount for defending-  EXTRA
 	pass
 
