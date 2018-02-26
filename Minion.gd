@@ -50,7 +50,7 @@ func attack(target):
 # call when the unit is attacked by another player's unit	
 func take_damage():
 	# when attacked, take damage accordingly
-	
+	print("sad")
 	# acccount for defending-  EXTRA
 	pass
 

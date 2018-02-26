@@ -24,15 +24,16 @@ func TakeTurn(delta):
 	elif (timer < 10):
 		get_child(1).get_child(1).WaitForAction(delta)
 		if (get_child(1).get_child(1).selectedAction != 0):
-			print("cycle to 3")
+			#print("cycle to 3")
 			timer = 10;
 	elif (timer < 15):
 		get_child(2).get_child(1).WaitForAction(delta)
 		if (get_child(2).get_child(1).selectedAction != 0):
-			print("cycle to 1")
+			#print("cycle to 1")
 			timer = 15;
 	else:
-		print("no input")
+		pass
+		#print("no input")
 	pass
 	
 func EndTurn():
