@@ -10,11 +10,12 @@ var characterObject
 var prevGridPosition 
 var notDead = 1
 
-
+var pickups
 func _ready():
 	minionTransform = get_global_transform()
 	characterObject = get_child(0)
 	prevGridPosition = get_child(1).SelectedGridPosition
+	pickups = get_parent().get_parent().get_child(3)
 	pass
 
 func _process(delta):
@@ -30,6 +31,10 @@ func _process(delta):
 		#get_child(1).hide()
 	#else:
 		#get_child(1).show()
+	# pickups hack :p
+	for i in range(0,6):
+		if(self.position == pickups.get_child(i).position):
+			pickups.get_child(i).hide()
 	pass
 
 

@@ -77,6 +77,11 @@ func _process(delta):
 		p2_m2.take_damage()
 	if(p2_m3_pos.x <= currentBoundryXStart or p2_m3_pos.x >= currentBoundryXEnd or p2_m3_pos.y <= currentBoundryYStart or p2_m3_pos.y >= currentBoundryYEnd):
 		p2_m3.take_damage()
+		
+	var pickups = get_parent().get_parent().get_child(3) 
+	for i in range(0,6):
+		if(pickups.get_child(i).position.x <= currentBoundryXStart or pickups.get_child(i).position.x >= currentBoundryXEnd or pickups.get_child(i).position.y <= currentBoundryYStart or pickups.get_child(i).position.y >= currentBoundryYEnd):
+			pickups.get_child(i).hide()
 	pass
 
 func shrink():
